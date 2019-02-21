@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Produit extends Model
 {
     public $timestamps =  false ;
-    protected $guarded = [];
+    protected $guarded = ["created_at","updated_at","categories_id"];
 
     public function categorie()
     {
