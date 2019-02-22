@@ -18,12 +18,13 @@ class ProduitController extends Controller
 
     public function allproduits()
     {
-        return Produit::all();
+        return Produit::with('categorie')->get();
     }
 
     public function getProtuit($id)
     {
-        return Produit::findorFail($id);
+        return Produit::with('categorie')->get()->find($id);
+       // return Produit::with('categorie')->get()->find($id);
     }
 
 

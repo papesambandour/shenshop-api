@@ -41,7 +41,7 @@ class CommandeController extends Controller
     }
     public function getCommande($id)
     {
-        return Commande::findorFail($id) ;
+        return Commande::with('produit')->get()->find($id) ;
     }
     public function allcommande()
     {
