@@ -46,6 +46,6 @@ class CommandeController extends Controller
     public function allcommande()
     {
         $id = JWTAuth::authenticate()->id;
-        return Commande::where('users_id',$id)->get();
+        return Commande::where('users_id',$id)->with('produit')->get();
     }
 }
